@@ -71,3 +71,96 @@ Das Frontend zeigt eine Fehlermeldung für dieses Backend.
 Ergebnis:
 [ ] bestanden
 [ ] nicht bestanden
+
+## Automatische Tests
+
+Diese Tests wurden zusätzlich eingerichtet.
+Sie laufen ohne echte PostgreSQL-Datenbank.
+
+### Frontend
+
+Schritt:
+
+```bash
+cd web/front
+pnpm lint
+pnpm format:check
+pnpm test
+pnpm build
+```
+
+Geprüft:
+
+- API-Funktion ruft `/api/status` auf.
+- Statuskarte zeigt Ladezustand, Erfolg und Fehler.
+- Startseite zeigt mehrere Backend-Statuskarten.
+
+Ergebnis:
+[x] bestanden
+
+### NestJS Backend
+
+Schritt:
+
+```bash
+cd web/back/nest-api
+pnpm lint
+pnpm test
+pnpm test:e2e
+pnpm build
+```
+
+Geprüft:
+
+- `StatusService` baut die Status-Antwort korrekt.
+- `/api/status` liefert das erwartete JSON.
+
+Ergebnis:
+[x] bestanden
+
+### Python Backend
+
+Schritt:
+
+```bash
+cd web/back/python-api
+python -m pytest
+```
+
+Geprüft:
+
+- `/api/status` liefert das erwartete JSON.
+- Datenbankprüfung liefert Erfolg oder Fehler sauber zurück.
+
+Ergebnis:
+[x] bestanden
+
+### Java Backend
+
+Schritt:
+
+```bash
+cd web/back/java-api
+./mvnw test
+./mvnw -DskipTests package
+```
+
+Geprüft:
+
+- `StatusService` baut die Status-Antwort korrekt.
+- `DatabaseService` liefert Erfolg oder Fehler sauber zurück.
+- Das Backend kann als Jar gebaut werden.
+
+Ergebnis:
+[x] bestanden
+
+### Alles zusammen
+
+Schritt:
+
+```bash
+bash scripts/check.sh
+```
+
+Ergebnis:
+[x] bestanden
