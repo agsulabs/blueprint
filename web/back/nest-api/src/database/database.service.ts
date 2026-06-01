@@ -26,8 +26,7 @@ export class DatabaseService {
         message: 'PostgreSQL ist erreichbar.',
       };
     } catch (error) {
-      const message =
-        error instanceof Error ? error.message : 'Unbekannter Fehler';
+      const message = error instanceof Error ? error.message : 'Unbekannter Fehler';
 
       return {
         connected: false,

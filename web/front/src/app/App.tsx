@@ -5,7 +5,7 @@
  * Diese Datei ist der Einstiegspunkt der React-Anwendung.
  */
 
-import { HomePage } from '../pages/home/ui/HomePage';
+import { HomePage } from '@/pages/home/ui/HomePage';
 import './styles/app.scss';
 
 export function App() {

@@ -8,10 +8,10 @@
 
 import { useEffect, useState } from 'react';
 
-import { fetchBackendStatus } from '../../../shared/api/backendStatusApi';
-import { backendTargets, type BackendTarget } from '../../../shared/config/backends';
-import type { BackendStatus } from '../../../shared/types/backendStatus';
-import { StatusCard } from '../../../widgets/status-card/ui/StatusCard';
+import { fetchBackendStatus } from '@/shared/api/backendStatusApi';
+import { backendTargets, type BackendTarget } from '@/shared/config/backends';
+import type { BackendStatus } from '@/shared/types/backendStatus';
+import { StatusCard } from '@/widgets/status-card/ui/StatusCard';
 
 type UiBackendStatus = {
   target: BackendTarget;
@@ -25,7 +25,7 @@ export function HomePage() {
     backendTargets.map((target) => ({
       target,
       loading: true,
-    }))
+    })),
   );
 
   useEffect(() => {
@@ -51,7 +51,7 @@ export function HomePage() {
               error: message,
             };
           }
-        })
+        }),
       );
 
       if (isComponentActive) {

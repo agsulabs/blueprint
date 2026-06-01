@@ -5,7 +5,7 @@
  * Diese Komponente zeigt den Status eines Backends als Karte an.
  */
 
-import type { BackendStatus } from '../../../shared/types/backendStatus';
+import type { BackendStatus } from '@/shared/types/backendStatus';
 
 type StatusCardProps = {
   title: string;

@@ -1,0 +1,8 @@
+node_modules
+dist
+coverage
+target
+.venv
+.m2
+*.class
+pnpm-lock.yaml

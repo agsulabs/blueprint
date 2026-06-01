@@ -6,8 +6,8 @@
  * mit der das Frontend den Status eines Backends abfragt.
  */
 
-import type { BackendTarget } from '../config/backends';
-import type { BackendStatus } from '../types/backendStatus';
+import type { BackendTarget } from '@/shared/config/backends';
+import type { BackendStatus } from '@/shared/types/backendStatus';
 
 export async function fetchBackendStatus(target: BackendTarget): Promise<BackendStatus> {
   const controller = new AbortController();

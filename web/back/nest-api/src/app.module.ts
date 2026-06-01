@@ -14,12 +14,6 @@ import { StatusModule } from './modules/status/status.module';
 import { UsersModule } from './modules/users/users.module';
 
 @Module({
-  imports: [
-    DatabaseModule,
-    StatusModule,
-    UsersModule,
-    AuthModule,
-    PublicPageModule,
-  ],
+  imports: [DatabaseModule, StatusModule, UsersModule, AuthModule, PublicPageModule],
 })
 export class AppModule {}

@@ -85,6 +85,12 @@ pnpm dev
 
 Das Frontend laeuft unter `http://localhost:5173`.
 
+Im Frontend ist der Import-Alias `@` auf `web/front/src` gesetzt. Beispiel:
+
+```ts
+import { HomePage } from '@/pages/home/ui/HomePage';
+```
+
 ## NestJS Backend starten
 
 ```bash
