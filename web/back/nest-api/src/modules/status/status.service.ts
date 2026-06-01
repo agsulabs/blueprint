@@ -2,12 +2,12 @@
  * Datei: status.service.ts
  *
  * Zweck:
- * Dieser Service baut die Status-Antwort für das Frontend.
+ * Dieser Service baut die Status-Antwort fuer das Frontend.
  */
 
 import { Injectable } from '@nestjs/common';
 
-import { DatabaseService } from '../database/database.service';
+import { DatabaseService } from '../../database/database.service';
 
 @Injectable()
 export class StatusService {

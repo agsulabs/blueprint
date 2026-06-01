@@ -24,6 +24,57 @@ admin_panel_dev
 
 Die Backends pruefen die Verbindung mit `SELECT 1`.
 
+## Backend-Architektur
+
+Alle Backends folgen derselben Grundidee:
+
+```text
+controller / router
+  -> service
+    -> repository / database service
+      -> database
+```
+
+Aktuell ist nur der Status-Endpunkt fachlich aktiv. `users`, `auth` und `public-page` sind bewusst als Platzhalter vorbereitet, damit spaeter echte Funktionen in eigenen Feature-Modulen wachsen koennen.
+
+NestJS:
+
+```text
+src/
+  config/
+  database/
+  modules/
+    status/
+    users/
+    auth/
+    public-page/
+```
+
+Python FastAPI:
+
+```text
+src/
+  config/
+  database/
+  modules/
+    status/
+    users/
+    auth/
+    public_page/
+```
+
+Java Spring Boot:
+
+```text
+com/example/javaapi/
+  config/
+  database/
+  status/
+  users/
+  auth/
+  publicpage/
+```
+
 ## Frontend starten
 
 ```bash

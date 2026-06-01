@@ -2,7 +2,7 @@
 Datei: status_service.py
 
 Zweck:
-Diese Datei baut die Status-Antwort für das Frontend.
+Diese Datei baut die Status-Antwort fuer das Frontend.
 """
 
 from src.database.database_service import check_database_connection

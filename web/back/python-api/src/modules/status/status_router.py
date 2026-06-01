@@ -7,7 +7,7 @@ Diese Datei stellt den HTTP-Endpunkt /api/status bereit.
 
 from fastapi import APIRouter
 
-from src.status.status_service import get_status
+from src.modules.status.status_service import get_status
 
 router = APIRouter(prefix="/api")
 
