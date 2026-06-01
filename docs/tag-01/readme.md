@@ -29,7 +29,7 @@ python -m uvicorn src.main:app --reload --port 8001
 
 Java Backend:
 
-mvn spring-boot:run
+./mvnw spring-boot:run
 
 ## Datenbank
 

@@ -61,7 +61,7 @@ Das Python Backend laeuft unter `http://localhost:8001/api/status`.
 
 ```bash
 cd web/back/java-api
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
 Das Java Backend laeuft unter `http://localhost:8081/api/status`.
