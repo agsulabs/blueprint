@@ -10,20 +10,24 @@ Technisches Fundament für eine spätere Admin-Plattform.
 
 ### Erledigt
 
-- [ ] Projektstruktur erstellt
-- [ ] React + TypeScript + Vite Frontend erstellt
-- [ ] FSD-Grundstruktur vorbereitet
-- [ ] NestJS Backend vorbereitet
-- [ ] Python FastAPI Backend vorbereitet
-- [ ] Java Spring Boot Backend vorbereitet
-- [ ] PostgreSQL-Datenbank erstellt
-- [ ] PostgreSQL-Verbindung geprüft
-- [ ] Fehleranzeige im Frontend eingebaut
-- [ ] Python Snake Hello World erstellt
-- [ ] Java Snake Hello World erstellt
-- [ ] Dokumentation für Tag 1 erstellt
-- [ ] Manuelle Tests dokumentiert
-- [ ] Git-Commit erstellt
+- [x] Projektstruktur erstellt
+- [x] React + TypeScript + Vite Frontend erstellt
+- [x] FSD-Grundstruktur vorbereitet
+- [x] NestJS Backend vorbereitet
+- [x] Python FastAPI Backend vorbereitet
+- [x] Java Spring Boot Backend vorbereitet
+- [ ] PostgreSQL-Datenbank lokal erstellen
+- [ ] PostgreSQL-Verbindung lokal testen
+- [x] Fehleranzeige im Frontend eingebaut
+- [x] Python Snake Hello World erstellt
+- [x] Java Snake Hello World erstellt
+- [x] Dokumentation für Tag 1 erstellt
+- [x] Manuelle Tests dokumentiert
+- [x] Git-Commit erstellt
+- [x] Repository von lokalen Artefakten bereinigt
+- [x] Root-.gitignore erstellt
+- [x] Python requirements.txt erstellt
+- [x] Python .env.example erstellt
 
 ### Nächster Tag
 
