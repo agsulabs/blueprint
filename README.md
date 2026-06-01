@@ -91,6 +91,15 @@ Im Frontend ist der Import-Alias `@` auf `web/front/src` gesetzt. Beispiel:
 import { HomePage } from '@/pages/home/ui/HomePage';
 ```
 
+Frontend pruefen:
+
+```bash
+pnpm lint
+pnpm format:check
+pnpm test
+pnpm build
+```
+
 ## NestJS Backend starten
 
 ```bash
@@ -101,18 +110,33 @@ pnpm start:dev
 
 Das NestJS Backend laeuft unter `http://localhost:3001/api/status`.
 
+NestJS pruefen:
+
+```bash
+pnpm lint
+pnpm test
+pnpm test:e2e
+pnpm build
+```
+
 ## Python Backend starten
 
 ```bash
 cd web/back/python-api
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-dev.txt
 cp .env.example .env
 python -m uvicorn src.main:app --reload --port 8001
 ```
 
 Das Python Backend laeuft unter `http://localhost:8001/api/status`.
+
+Python pruefen:
+
+```bash
+python -m pytest
+```
 
 ## Java Backend starten
 
@@ -122,6 +146,19 @@ cd web/back/java-api
 ```
 
 Das Java Backend laeuft unter `http://localhost:8081/api/status`.
+
+Java pruefen:
+
+```bash
+./mvnw test
+./mvnw -DskipTests package
+```
+
+## Alles pruefen
+
+```bash
+bash scripts/check.sh
+```
 
 ## Nicht einchecken
 

@@ -3,21 +3,41 @@ import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
 import { App } from 'supertest/types';
 import { AppModule } from './../src/app.module';
+import { DatabaseService } from './../src/database/database.service';
 
-describe('AppController (e2e)', () => {
+describe('Status endpoint (e2e)', () => {
   let app: INestApplication<App>;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
-    }).compile();
+    })
+      .overrideProvider(DatabaseService)
+      .useValue({
+        checkConnection: jest.fn().mockResolvedValue({
+          connected: true,
+          message: 'PostgreSQL ist erreichbar.',
+        }),
+      })
+      .compile();
 
     app = moduleFixture.createNestApplication();
     await app.init();
   });
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer()).get('/').expect(200).expect('Hello World!');
+  it('/api/status (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/api/status')
+      .expect(200)
+      .expect({
+        backend: 'NestJS',
+        greeting: 'Hallo Gast',
+        status: 'online',
+        database: {
+          connected: true,
+          message: 'PostgreSQL ist erreichbar.',
+        },
+      });
   });
 
   afterEach(async () => {
