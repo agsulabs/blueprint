@@ -1,0 +1,5 @@
+{
+  "java.project.sourcePaths": ["java-snake/src"],
+  "java.project.outputPath": "java-snake/bin",
+  "java.compile.nullAnalysis.mode": "automatic"
+}
