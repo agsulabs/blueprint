@@ -105,6 +105,7 @@ pnpm build
 ```bash
 cd web/back/nest-api
 pnpm install
+cp .env.example .env
 pnpm start:dev
 ```
 
@@ -146,6 +147,14 @@ cd web/back/java-api
 ```
 
 Das Java Backend laeuft unter `http://localhost:8081/api/status`.
+
+Optional kann fuer lokale Java-Overrides eine eigene Datei erstellt werden:
+
+```bash
+cd web/back/java-api
+cp application-local.example.properties application-local.properties
+./mvnw spring-boot:run -Dspring-boot.run.profiles=local
+```
 
 Java pruefen:
 

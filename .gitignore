@@ -25,6 +25,8 @@ coverage/
 .env
 .env.*
 !.env.example
+web/back/java-api/application-local.properties
+web/back/java-api/src/main/resources/application-local.properties
 
 # Logs
 logs/
