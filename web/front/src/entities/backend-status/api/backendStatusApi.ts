@@ -1,13 +1,15 @@
 /**
  * Datei: backendStatusApi.ts
  *
- * Zweck:
- * Diese Datei enthält die API-Funktion,
- * mit der das Frontend den Status eines Backends abfragt.
+ * Aufgabe:
+ * Diese Datei lädt den Status einer Backend-Variante.
+ *
+ * Warum liegt sie in entities/backend-status?
+ * Der Status-Contract gehört fachlich zum Backend-Status.
+ * Shared bleibt für wirklich allgemeine Bausteine.
  */
 
-import type { BackendTarget } from '@/shared/config/backends';
-import type { BackendStatus } from '@/shared/types/backendStatus';
+import type { BackendStatus, BackendTarget } from '@/entities/backend-status/model/types';
 
 export async function fetchBackendStatus(target: BackendTarget): Promise<BackendStatus> {
   const controller = new AbortController();

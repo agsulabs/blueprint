@@ -1,14 +1,17 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { fetchBackendStatus } from '@/shared/api/backendStatusApi';
-import { backendTargets } from '@/shared/config/backends';
-import type { BackendStatus } from '@/shared/types/backendStatus';
+import { backendTargets, fetchBackendStatus, type BackendStatus } from '@/entities/backend-status';
 import { HomePage } from '@/pages/home/ui/HomePage';
 
-vi.mock('@/shared/api/backendStatusApi', () => ({
-  fetchBackendStatus: vi.fn(),
-}));
+vi.mock('@/entities/backend-status', async (importOriginal) => {
+  const actual = await importOriginal<Record<string, unknown>>();
+
+  return {
+    ...actual,
+    fetchBackendStatus: vi.fn(),
+  };
+});
 
 const fetchBackendStatusMock = vi.mocked(fetchBackendStatus);
 
@@ -29,7 +32,7 @@ describe('HomePage', () => {
     fetchBackendStatusMock.mockReset();
   });
 
-  it('renders backend cards and updates them with success or error states', async () => {
+  it('renders the status panel and updates backend groups with success or error states', async () => {
     fetchBackendStatusMock.mockImplementation(async (target) => {
       if (target.name === 'Python Backend') {
         throw new Error('Python backend offline');
@@ -40,12 +43,14 @@ describe('HomePage', () => {
 
     render(<HomePage />);
 
+    expect(screen.getByText('Blueprint Admin Platform')).toBeTruthy();
+
     for (const target of backendTargets) {
       expect(screen.getByRole('heading', { name: target.name })).toBeTruthy();
     }
 
     await waitFor(() => {
-      expect(screen.getAllByText('Backend-Status: online')).toHaveLength(2);
+      expect(screen.getAllByText('Status: online')).toHaveLength(2);
     });
     expect(screen.getByText('Backend nicht erreichbar.')).toBeTruthy();
     expect(screen.getByText('Python backend offline')).toBeTruthy();

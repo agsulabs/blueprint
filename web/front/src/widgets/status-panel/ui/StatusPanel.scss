@@ -1,0 +1,75 @@
+/**
+ * Datei: StatusPanel.scss
+ *
+ * Aufgabe:
+ * Diese Datei gestaltet den Statusbereich responsiv.
+ */
+
+.status-panel {
+  width: 100%;
+}
+
+.status-panel__header {
+  margin-bottom: 1.5rem;
+}
+
+.status-panel__title {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.status-panel__description {
+  max-width: 42rem;
+  margin: 0.75rem 0 0;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.status-panel__backend {
+  padding: 1.5rem 0;
+  border-top: 1px solid #d8dee9;
+}
+
+.status-panel__backend-title {
+  margin: 0 0 1rem;
+  color: #172033;
+  font-size: 1.125rem;
+}
+
+.status-panel__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.status-panel__loading,
+.status-panel__error {
+  padding: 1rem;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.status-panel__error {
+  border: 1px solid #fecaca;
+  background: #fff1f2;
+}
+
+.status-panel__error-detail {
+  margin: 0.5rem 0 0;
+  color: #991b1b;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .status-panel__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .status-panel__cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

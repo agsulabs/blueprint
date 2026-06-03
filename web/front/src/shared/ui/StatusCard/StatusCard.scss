@@ -1,0 +1,55 @@
+/**
+ * Datei: StatusCard.scss
+ *
+ * Aufgabe:
+ * Diese Datei enthält die Darstellung für eine Statuskarte.
+ */
+
+.status-card {
+  position: relative;
+  padding: 1rem;
+  border: 1px solid #d8dee9;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 0.5rem 1.5rem rgb(15 23 42 / 8%);
+}
+
+.status-card__title {
+  margin: 0 0 0.5rem;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.status-card__value {
+  display: block;
+  color: #0f172a;
+  font-size: 1.125rem;
+}
+
+.status-card__hint {
+  margin: 0.75rem 0 0;
+  color: #475569;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.status-card__badge {
+  display: inline-flex;
+  margin-top: 1rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 8px;
+  background: #e2e8f0;
+  color: #0f172a;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.status-card__badge--positive {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-card__badge--negative {
+  background: #fee2e2;
+  color: #991b1b;
+}

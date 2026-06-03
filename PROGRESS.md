@@ -53,3 +53,46 @@ Technisches Fundament für eine spätere Admin-Plattform.
 An Tag 2 wird das Layout sauberer aufgebaut.
 Außerdem wird die responsive Struktur verbessert.
 Die Backends bleiben weiterhin einfach.
+
+## Tag 2
+
+Datum: 03.06.2026
+
+### Thema
+
+Responsive Startseite und sauberer Frontend-Status-Flow mit FSD-Struktur.
+
+### Erledigt
+
+- [x] `HomePage` vereinfacht
+- [x] Status-Logik in `widgets/status-panel` verschoben
+- [x] Wiederverwendbare `StatusCard` in `shared/ui` erstellt
+- [x] Backend-Status als Entity `entities/backend-status` aufgebaut
+- [x] Drei Backend-Varianten weiterhin im Frontend angebunden
+- [x] Pro Backend vier Karten angezeigt: Anwendung, Backend, Datenbank, Geprüft am
+- [x] Fehlerzustand pro Backend beibehalten
+- [x] Responsive Grid fuer Statuskarten verbessert
+- [x] Frontend-Tests an neue Struktur angepasst
+- [x] Python Snake um erste Variablen erweitert
+- [x] Java Snake um erste Variablen erweitert
+- [x] Java Snake Start-Script mit UTF-8-Kompilierung erstellt
+- [x] Dokumentation fuer Tag 2 erstellt
+
+### Gelernt
+
+- Eine Seite sollte nicht alle Aufgaben selbst übernehmen.
+- Ein Widget ist ein größerer UI-Bereich mit eigener Logik.
+- Eine shared UI-Komponente soll keine Fachlogik kennen.
+- Eine Entity beschreibt einen fachlichen Begriff wie `backend-status`.
+- FSD hilft, Code nach Verantwortung zu sortieren.
+- Derselbe Status-Flow kann in NestJS, FastAPI und Spring Boot gelernt werden.
+- `Geprüft am` kann im Frontend gesetzt werden, sollte später aber besser Teil des Backend-Contracts werden.
+
+### Checks
+
+- [x] Frontend Formatting geprüft
+- [x] Frontend Linting geprüft
+- [x] Frontend Tests erfolgreich
+- [x] Frontend Build erfolgreich
+- [x] Python Snake gestartet
+- [x] Java Snake per `run.sh` gestartet

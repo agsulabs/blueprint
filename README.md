@@ -13,6 +13,7 @@ Tag 1 prueft nur, ob Frontend, Backends und PostgreSQL erreichbar sind. Es gibt 
 - `python-snake` - erstes Python Core Projekt
 - `java-snake` - erstes Java Core Projekt
 - `docs/tag-01` - Dokumentation fuer Tag 1
+- `docs/tag-02` - Dokumentation fuer Tag 2
 
 ## Datenbank
 
@@ -88,8 +89,32 @@ Das Frontend laeuft unter `http://localhost:5173`.
 Im Frontend ist der Import-Alias `@` auf `web/front/src` gesetzt. Beispiel:
 
 ```ts
-import { HomePage } from '@/pages/home/ui/HomePage';
+import { HomePage } from '@/pages/home';
 ```
+
+### Frontend-Architektur ab Tag 2
+
+Das Frontend orientiert sich an FSD:
+
+```text
+app      - App-Einstieg und globale Styles
+pages    - komplette Seiten wie HomePage
+widgets  - groessere UI-Bloecke mit Logik, z.B. StatusPanel
+entities - fachliche Projektbegriffe, z.B. backend-status
+shared   - wiederverwendbare UI-Bausteine, z.B. StatusCard
+```
+
+Die Startseite zeigt fuer jede Backend-Variante denselben Status-Flow:
+
+```text
+Anwendung
+Backend
+Datenbank
+Geprueft am
+```
+
+Das Ziel ist nicht, die Backends als Wettbewerb zu vergleichen.
+Das Ziel ist, dieselbe Aufgabe in NestJS, FastAPI und Spring Boot zu lernen.
 
 Frontend pruefen:
 
@@ -162,6 +187,23 @@ Java pruefen:
 ./mvnw test
 ./mvnw -DskipTests package
 ```
+
+## Core-Uebungen starten
+
+Python Snake:
+
+```bash
+python3 python-snake/main.py
+```
+
+Java Snake:
+
+```bash
+bash java-snake/run.sh
+```
+
+Der Java-Snake-Start nutzt `javac -encoding UTF-8`, damit deutsche Kommentare im
+Quellcode ohne lokale Encoding-Probleme funktionieren.
 
 ## Alles pruefen
 

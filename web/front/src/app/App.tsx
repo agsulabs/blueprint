@@ -1,11 +1,12 @@
 /**
  * Datei: App.tsx
  *
- * Zweck:
- * Diese Datei ist der Einstiegspunkt der React-Anwendung.
+ * Aufgabe:
+ * App ist der Einstiegspunkt für unsere React-Oberfläche.
+ * Heute zeigt sie nur die öffentliche HomePage.
  */
 
-import { HomePage } from '@/pages/home/ui/HomePage';
+import { HomePage } from '@/pages/home';
 import './styles/app.scss';
 
 export function App() {

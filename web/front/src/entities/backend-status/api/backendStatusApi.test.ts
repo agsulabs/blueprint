@@ -1,8 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { fetchBackendStatus } from '@/shared/api/backendStatusApi';
-import type { BackendTarget } from '@/shared/config/backends';
-import type { BackendStatus } from '@/shared/types/backendStatus';
+import type { BackendStatus, BackendTarget } from '@/entities/backend-status/model/types';
+import { fetchBackendStatus } from './backendStatusApi';
 
 const target: BackendTarget = {
   name: 'Test Backend',

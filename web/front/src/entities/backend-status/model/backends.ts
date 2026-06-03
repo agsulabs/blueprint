@@ -1,17 +1,14 @@
 /**
  * Datei: backends.ts
  *
- * Zweck:
- * Diese Datei enthält die Adressen unserer drei Backends.
+ * Aufgabe:
+ * Diese Datei enthält die Adressen unserer drei Backend-Varianten.
  *
  * Warum zentral?
  * Wenn sich ein Port ändert, müssen wir nur diese Datei bearbeiten.
  */
 
-export type BackendTarget = {
-  name: string;
-  baseUrl: string;
-};
+import type { BackendTarget } from './types';
 
 export const backendTargets: BackendTarget[] = [
   {

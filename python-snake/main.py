@@ -1,14 +1,28 @@
 """
-Datei: main.py
+Projekt: Python Snake
+Tag 2
 
-Zweck:
-Dies ist der erste Startpunkt für unser zukünftiges Python-Snake-Spiel.
-Heute gibt das Programm nur eine Begrüßung aus.
+Aufgabe:
+Wir definieren erste Variablen für das spätere Snake-Spiel.
+Heute gibt es noch keine Bewegung und keine Spiellogik.
 """
+
+GAME_TITLE = "Python Snake"
+PLAYER_NAME = "Gast"
+START_X = 5
+START_Y = 5
 
 
 def main() -> None:
-    print("Hallo Python Snake!")
+    """
+    Startfunktion des Programms.
+    Sie gibt einfache Informationen über das spätere Spiel aus.
+    """
+
+    print(GAME_TITLE)
+    print("Spieler:", PLAYER_NAME)
+    print("Startposition X:", START_X)
+    print("Startposition Y:", START_Y)
 
 
 if __name__ == "__main__":

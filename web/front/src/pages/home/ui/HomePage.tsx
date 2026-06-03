@@ -1,93 +1,34 @@
 /**
  * Datei: HomePage.tsx
  *
- * Zweck:
+ * Aufgabe:
  * Diese Seite ist die öffentliche Startseite.
- * Heute zeigt sie nur technische Statuskarten.
+ *
+ * Wichtig:
+ * Das ist noch kein Admin-Panel.
+ * Die Startseite zeigt nur einen einfachen Einstieg und den Systemstatus.
  */
 
-import { useEffect, useState } from 'react';
+import { StatusPanel } from '@/widgets/status-panel';
 
-import { fetchBackendStatus } from '@/shared/api/backendStatusApi';
-import { backendTargets, type BackendTarget } from '@/shared/config/backends';
-import type { BackendStatus } from '@/shared/types/backendStatus';
-import { StatusCard } from '@/widgets/status-card/ui/StatusCard';
-
-type UiBackendStatus = {
-  target: BackendTarget;
-  loading: boolean;
-  data?: BackendStatus;
-  error?: string;
-};
+import './HomePage.scss';
 
 export function HomePage() {
-  const [statuses, setStatuses] = useState<UiBackendStatus[]>(
-    backendTargets.map((target) => ({
-      target,
-      loading: true,
-    })),
-  );
-
-  useEffect(() => {
-    let isComponentActive = true;
-
-    async function loadStatuses() {
-      const results = await Promise.all(
-        backendTargets.map(async (target) => {
-          try {
-            const data = await fetchBackendStatus(target);
-
-            return {
-              target,
-              loading: false,
-              data,
-            };
-          } catch (error) {
-            const message = error instanceof Error ? error.message : 'Unbekannter Fehler';
-
-            return {
-              target,
-              loading: false,
-              error: message,
-            };
-          }
-        }),
-      );
-
-      if (isComponentActive) {
-        setStatuses(results);
-      }
-    }
-
-    loadStatuses();
-
-    return () => {
-      isComponentActive = false;
-    };
-  }, []);
-
   return (
     <main className="home-page">
-      <section className="hero">
-        <p className="hero__label">Tag 1 · Technisches Fundament</p>
-        <h1>Admin-Plattform startet</h1>
-        <p>
-          Diese öffentliche Startseite zeigt heute nur, ob Frontend, Backends und Datenbank
-          erreichbar sind.
+      <section className="home-page__hero">
+        <p className="home-page__eyebrow">Blueprint Admin Platform</p>
+
+        <h1 className="home-page__title">Hallo Gast</h1>
+
+        <p className="home-page__text">
+          Diese öffentliche Startseite wird später Inhalte anzeigen, die im Admin-Bereich gepflegt
+          werden. Heute prüfen wir nur die technische Verbindung zwischen Frontend, Backend und
+          Datenbank.
         </p>
       </section>
 
-      <section className="status-grid" aria-label="Backend-Status">
-        {statuses.map((item) => (
-          <StatusCard
-            key={item.target.name}
-            title={item.target.name}
-            loading={item.loading}
-            data={item.data}
-            error={item.error}
-          />
-        ))}
-      </section>
+      <StatusPanel />
     </main>
   );
 }
