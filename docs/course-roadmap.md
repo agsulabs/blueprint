@@ -68,6 +68,35 @@ Der Unterricht selbst soll auf Deutsch sein:
 
 Meta-Fragen des Nutzers duerfen auf Russisch beantwortet werden.
 
+## Regel fuer neue Chats
+
+Diese Roadmap ist die zentrale Anleitung fuer alle neuen Chats im Projekt.
+
+Wenn ein neuer Chat gestartet wird, reicht als Startsignal:
+
+```text
+Tag X
+Nutze docs/course-roadmap.md als Kurs-Roadmap.
+```
+
+Ab Tag 3 gilt konkret:
+
+```text
+Tag 3
+Nutze docs/course-roadmap.md als Kurs-Roadmap.
+Arbeite auf main.
+day-01, day-02, day-03 sind Git-Tags, keine Branches.
+Der Unterricht selbst komplett auf Deutsch.
+```
+
+Wichtig:
+
+- Kein separater Chat-Kontext ist Pflicht.
+- Keine separate Datei fuer den Chat-Kontext ist notwendig.
+- `docs/course-roadmap.md` ist die zentrale Quelle.
+- Nach jedem abgeschlossenen Tag wird diese Roadmap bei Bedarf aktualisiert.
+- Der Abschnitt "Naechster konkreter Tag" zeigt immer, was als Naechstes kommt.
+
 ## Taegliches Format
 
 Jeder Lerntag soll diese Struktur haben:
@@ -201,7 +230,7 @@ Aufgaben:
 - Tests anpassen
 - `docs/tag-03` erstellen
 - Python Snake: Koordinaten und Spielzustand vertiefen
-- Java Snake: Datentypen, Koordinaten und Spielzustand vertiefen
+- Java Snake: Datentypen und Koordinaten und Spielzustand vertiefen
 - `scripts/check.sh` ausfuehren
 - Commit erstellen
 - Git-Tag `day-03` erstellen
